@@ -1,0 +1,50 @@
+PROCESSAMENTO GRÁFICO 2022/2 - LISTA 1 - QUESTÕES DISSERTATIVAS
+
+1- A GLSL (OpenGL Shader Language) é a linguagem utilizada para a programação dos shaders. 
+Na OpenGL moderna são obrigatórios dois shaders, o vertex e o fragment shader. O vertex shader processa cada vértice individualmente (posição, textura, cor). Já o fragment shader processa os fragmentos, ou seja, um conjunto de vértices que formam uma área, tratando principalmente da sua cor e opacidade.
+
+2- Primitivas são os modelos mais básicos que podemos desenhar com os vértices armazenados na OpenGL. Alguns exemplos são, pontos, linhas, loop de linhas, triângulos etc.
+Armazena-se esses vértices em um array coordenadas float, que serão lidas e interpretadas pelo programa.
+
+3- VBO (Vertex Buffer Object) é um buffer utilizado para enviar os dados (posição e cores) dos vértices para a GPU.
+VAO (Vertex Array Object) é quem diz como os valores armazenados no VBO devem ser lidos. Se há mais de um atributo para cada vértice, o VAO indica a ordem e o "passo" que o vetor deve ser percorrido para mapear as informações corretamente.
+O EBO é utilizado quando deseja-se utilizar um vetor de índices para o mapeamento dos vértices do VBO (muito utilizado para reaproveitamento de vértices e evitar a especificação de vértices duplicados)
+
+8-
+a) 
+
+*VBO: 
+
+float VBO[] = {
+		// positions         // colors
+		 0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f,   // bottom right
+		-0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f,   // bottom left
+		 0.0f,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f    // top 
+	};
+
+*VAO:
+
+	// position attribute
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+	glEnableVertexAttribArray(0);
+	// color attribute
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+	glEnableVertexAttribArray(1);
+
+*EBO:
+
+int EBO[] = {
+	0, 1, 2
+}
+
+b)
+
+#version 450
+layout (location = 0) in vec3 position;
+layout (location = 1) in vec3 color;
+out vec3 cor;
+void main()
+{
+gl_Position = vec4(position.x, position.y, position.z, 1.0)
+cor = color;
+}
