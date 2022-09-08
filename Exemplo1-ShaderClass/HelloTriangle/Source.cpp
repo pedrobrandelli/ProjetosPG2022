@@ -37,6 +37,7 @@ int setupGeometry();
 // Dimensões da janela (pode ser alterado em tempo de execução)
 const GLuint WIDTH = 800, HEIGHT = 600;
 
+//using namespace glm;
 
 // Função MAIN
 int main()
@@ -79,9 +80,7 @@ int main()
 
 	// Definindo as dimensões da viewport com as mesmas dimensões da janela da aplicação
 	int width, height;
-	glfwGetFramebufferSize(window, &width, &height);
-	//glViewport(0, 0, width, height);
-	glViewport(width/2, height/2, width/2, height/2);
+	
 
 
 	// Compilando e buildando o programa de shader
@@ -90,16 +89,16 @@ int main()
 	// Gerando um buffer simples, com a geometria de um triângulo
 	GLuint VAO = setupGeometry();
 
-	// Criação da matriz de projeção paralela ortográfica
+	//Matriz de projeção
 	glm::mat4 projection = glm::mat4(1); //matriz identidade
 	//projection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, -1.0f, 1.0f);
 	projection = glm::ortho(0.0f, 800.0f, 600.0f, 0.0f, -1.0f, 1.0f);
 
-
 	
 	glUseProgram(shader.ID);
-	
+
 	shader.setMat4("projection", glm::value_ptr(projection));
+	
 	// Loop da aplicação - "game loop"
 	while (!glfwWindowShouldClose(window))
 	{
@@ -113,6 +112,9 @@ int main()
 		glLineWidth(10);
 		glPointSize(20);
 
+		glfwGetFramebufferSize(window, &width, &height);
+		glViewport(0, 0, width/2, height/2);
+
 		// Chamada de desenho - drawcall
 		// Poligono Preenchido - GL_TRIANGLES
 		shader.setVec4("inputColor",1.0f, 1.0f, 0.0f, 1.0f); //enviando cor para variável uniform inputColor
@@ -125,6 +127,13 @@ int main()
 		shader.setVec4("inputColor",1.0f, 0.0f, 1.0f, 1.0f); //enviando cor para variável uniform inputColor
 		glDrawArrays(GL_LINE_LOOP, 0, 3);
 		
+		////////------------ fim do 1o viewport
+		glViewport(width / 2, height / 2, width / 2, height / 2);
+		shader.setVec4("inputColor", 1.0f, 0.0f, 1.0f, 1.0f);
+		glDrawArrays(GL_TRIANGLES, 0, 3);
+		shader.setVec4("inputColor", 1.0f, 1.0f, 0.0f, 1.0f); //enviando cor para variável uniform inputColor
+		glDrawArrays(GL_LINE_LOOP, 0, 3);
+
 		glBindVertexArray(0);
 
 		// Troca os buffers da tela
@@ -159,9 +168,9 @@ int setupGeometry()
 	// Cada atributo do vértice (coordenada, cores, coordenadas de textura, normal, etc)
 	// Pode ser arazenado em um VBO único ou em VBOs separados
 	GLfloat vertices[] = {
-		-0.5 * 300 + 400, (-0.5 * 300) + 300, 0.0,
-		(0.5 * 300) + 400, (-0.5 * 300) + 300, 0.0,
-		(0.0 * 300) + 400, (0.5 * 300) + 300, 0.0,
+		-0.5 * 300 + 400, -0.5 * 300 + 300, 0.0,
+		0.5 * 300 + 400 , -0.5 * 300 + 300, 0.0,
+		0.0 * 300 + 400, 0.5 * 300 + 300, 0.0,
 		 //outro triangulo vai aqui
 	};
 

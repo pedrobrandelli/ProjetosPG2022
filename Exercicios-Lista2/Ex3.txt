@@ -1,0 +1,4 @@
+LISTA 2 - PEDRO BRANDELLI
+
+3-
+Ao modificar a definição dos limites da projeção, é como se estivéssemos dando zoom ou movendo uma câmera pelo desenho. Pode ser útil em jogos, onde a movimentação da câmera é controlada por inputs do usuário.
