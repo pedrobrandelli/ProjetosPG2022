@@ -1,0 +1,5 @@
+﻿  Source.cpp
+C:\Users\Pedro\Documents\GitHub\ProjetosPG2022\Exemplo-Texturas\HelloTriangle\Source.cpp(280,11): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
+C:\Users\Pedro\Documents\GitHub\ProjetosPG2022\Exemplo-Texturas\HelloTriangle\Source.cpp(281,11): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
+C:\Users\Pedro\Documents\GitHub\ProjetosPG2022\Exemplo-Texturas\HelloTriangle\Source.cpp(341,14): warning C4244: 'argumento': conversão de 'int' para 'GLfloat', possível perda de dados
+  HelloTriangle.vcxproj -> C:\Users\Pedro\Documents\GitHub\ProjetosPG2022\Exemplo-Texturas\Debug\HelloTriangle.exe

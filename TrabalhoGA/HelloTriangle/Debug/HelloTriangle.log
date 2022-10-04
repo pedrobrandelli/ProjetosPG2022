@@ -1,0 +1,7 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(514,5): warning MSB8028: O diretório intermediário (Debug\) contém arquivos compartilhados de outro projeto (HelloTriangle.vcxproj). Isso pode levar a um comportamento incorreto de limpeza e recompilação.
+  Source.cpp
+C:\Users\Pedro\Documents\GitHub\ProjetosPG2022\TrabalhoGA\HelloTriangle\Source.cpp(60,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+C:\Users\Pedro\Documents\GitHub\ProjetosPG2022\TrabalhoGA\HelloTriangle\Source.cpp(141,17): warning C4244: 'inicializando': conversão de 'int' para 'float', possível perda de dados
+C:\Users\Pedro\Documents\GitHub\ProjetosPG2022\TrabalhoGA\HelloTriangle\Source.cpp(163,24): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
+C:\Users\Pedro\Documents\GitHub\ProjetosPG2022\TrabalhoGA\HelloTriangle\Source.cpp(164,26): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
+  HelloTriangle.vcxproj -> C:\Users\Pedro\Documents\GitHub\ProjetosPG2022\TrabalhoGA\Debug\TrabalhoGA.exe
