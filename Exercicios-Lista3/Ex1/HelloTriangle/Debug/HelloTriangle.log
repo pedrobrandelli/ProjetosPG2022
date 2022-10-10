@@ -1,0 +1,3 @@
+﻿  Source.cpp
+C:\Users\Pedro\Documents\GitHub\ProjetosPG2022\Exercicios-Lista3\Ex1\HelloTriangle\Source.cpp(236,14): warning C4244: 'argumento': conversão de 'int' para 'GLfloat', possível perda de dados
+  HelloTriangle.vcxproj -> C:\Users\Pedro\Documents\GitHub\ProjetosPG2022\Exercicios-Lista3\Ex1\Debug\HelloTriangle.exe

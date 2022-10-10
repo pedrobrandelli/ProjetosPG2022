@@ -1,0 +1,4 @@
+﻿  Source.cpp
+C:\Users\Pedro\Documents\GitHub\ProjetosPG2022\Exercicios-Lista3\Ex2\HelloTriangle\Source.cpp(46,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+C:\Users\Pedro\Documents\GitHub\ProjetosPG2022\Exercicios-Lista3\Ex2\HelloTriangle\Source.cpp(239,14): warning C4244: 'argumento': conversão de 'int' para 'GLfloat', possível perda de dados
+  HelloTriangle.vcxproj -> C:\Users\Pedro\Documents\GitHub\ProjetosPG2022\Exercicios-Lista3\Ex2\Debug\HelloTriangle.exe
